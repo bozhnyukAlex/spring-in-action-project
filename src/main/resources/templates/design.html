@@ -9,6 +9,9 @@
 <h1>Design your taco!</h1>
 <img th:src="@{/images/TacoCloud.png}"/>
 <form method="POST" th:object="${taco}">
+    <span class="validationError"
+          th:if="${#fields.hasErrors('ingredients')}"
+          th:errors="*{ingredients}">Ingredients Error</span>
     <div class="grid">
         <div class="ingredient-group" id="wraps">
             <h3>Designate your wrap:</h3>
@@ -44,6 +47,9 @@
     <div>
         <h3>Name your taco creation:</h3>
         <input type="text" th:field="*{name}"/>
+        <span class="validationError"
+              th:if="${#fields.hasErrors('name')}"
+              th:errors="*{name}">Taco Name Error</span>
         <br/>
         <button>Submit Your Taco</button>
     </div>
