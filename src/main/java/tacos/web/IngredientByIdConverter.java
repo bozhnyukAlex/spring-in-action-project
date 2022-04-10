@@ -6,17 +6,13 @@ import org.springframework.stereotype.Component;
 import tacos.Ingredient;
 import tacos.data.IngredientRepository;
 
-import java.util.HashMap;
-import java.util.Map;
-
 @Component
 public class IngredientByIdConverter implements Converter<String, Ingredient> {
 
-    private Map<String, Ingredient> ingredientMap = new HashMap<>();
     private IngredientRepository ingredientRepo;
 
     @Autowired
-    public IngredientByIdConverter() {
+    public IngredientByIdConverter(IngredientRepository ingredientRepo) {
         this.ingredientRepo = ingredientRepo;
     }
 
