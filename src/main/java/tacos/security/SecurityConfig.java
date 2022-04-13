@@ -50,6 +50,11 @@ public class SecurityConfig {
                     .antMatchers("/", "/**").permitAll()
 
                 .and()
+                    .formLogin()
+                    .loginPage("/login")
+                    .defaultSuccessUrl("/design", true)
+
+                .and()
                 .build();
     }
 }
