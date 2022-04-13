@@ -19,5 +19,9 @@
             <input type="password" name="password" id="password" /><br/>
             <input type="submit" value="Login"/>
         </form>
+        <a th:href="/oauth2/authorization/facebook">Sign in with Facebook</a>
+        <form method="POST" th:action="@{/logout}">
+            <input type="submit" value="Logout"/>
+        </form>
     </body>
 </html>
